@@ -1,0 +1,15 @@
+@import "layout/LayoutComponent";
+@import "../resources/styles/spacing";
+@import "../resources/styles/dragging";
+@import "pickupCards/PickupCards";
+@import "cards/Card";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: gray;
+}

@@ -1,0 +1,18 @@
+.empty-slot {
+  background-color: white;
+  height: 287px;
+  width: 169px;
+  margin: 10px;
+  border: 1px solid black;
+
+  &-logo {
+    @extend .empty-slot;
+    margin: 0;
+  }
+}
+
+.filled-slot {
+  background-image: url("../../src/resources/0.png");
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,18 @@
+.reversed {
+  cursor: pointer;
+  &-0 {
+    background-image: url("../resources/0.png");
+  }
+  &-1 {
+    background-image: url("../resources/1.png");
+  }
+  &-2 {
+    background-image: url("../resources/2.png");
+  }
+  &-3 {
+    background-image: url("../resources/3.png");
+  }
+  &-4 {
+    background-image: url("../resources/4.png");
+  }
+}
