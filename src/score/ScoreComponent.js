@@ -1,13 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const Score = () => {
-  const [score, setScore] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => setScore(score => score + 1), 1000);
-    return () => clearInterval(interval);
-  }, [score]);
-
+const Score = ({ score }) => {
   return (
     <h1>
       Score: {score} second{score > 1 ? "s" : ""}

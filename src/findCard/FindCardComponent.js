@@ -1,17 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./FindCard.scss";
 import StaticCard from "../cards/staticCard/StaticCardComponent";
 
-const FindCard = ({ hiddenPictureParts }) => {
-  const [partToFind, setPartToFind] = useState(
-    hiddenPictureParts[Math.floor(Math.random() * hiddenPictureParts.length)]
-  );
-
-  useEffect(() => {
-    setPartToFind(
-      hiddenPictureParts[Math.floor(Math.random() * hiddenPictureParts.length)]
-    );
-  }, [hiddenPictureParts]);
+const FindCard = ({ partToFind }) => {
 
   return (
     <div className="f-vertical find-card-wrapper">

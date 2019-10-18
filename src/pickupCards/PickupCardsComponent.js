@@ -2,7 +2,14 @@ import React, { useState, useEffect } from "react";
 import DraggableCard from "../cards/draggableCard/DraggableCardComponent";
 import _shuffle from "lodash/shuffle";
 
-const PickupCards = ({ hiddenPictureParts, setDraggedPart }) => {
+const PickupCards = ({
+  hiddenPictureParts,
+  setDraggedPart,
+  setPickedPart,
+  startGame,
+  setStartGame,
+  partToFind
+}) => {
   const [shuffledParts, setShuffledParts] = useState([
     ..._shuffle(hiddenPictureParts)
   ]);
@@ -18,6 +25,10 @@ const PickupCards = ({ hiddenPictureParts, setDraggedPart }) => {
     <div className="f-horizontal pickup-cards-wrapper">
       {shuffledParts.map(partId => (
         <DraggableCard
+          partToFind={partToFind}
+          startGame={startGame}
+          setStartGame={setStartGame}
+          setPickedPart={setPickedPart}
           key={partId}
           partId={partId}
           classes="empty-slot draggable-card-image"
