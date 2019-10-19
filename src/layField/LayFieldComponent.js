@@ -11,10 +11,11 @@ const LayField = ({
 }) => {
   return (
     <div className="f-horizontal f-justify-content">
-      {foundPictureParts.map(partId => (
+      {foundPictureParts.map((partId, index) => (
         <StaticCard
           key={partId}
           partId={partId}
+          slotNumber={index}
           classes="empty-slot-logo"
           draggedPart={draggedPart}
           hiddenPictureParts={hiddenPictureParts}

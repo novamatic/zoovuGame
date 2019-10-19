@@ -4,6 +4,7 @@
   width: 169px;
   margin: 10px;
   border: 1px solid black;
+  border-radius: 10px;
 
   &-logo {
     @extend .empty-slot;
@@ -15,4 +16,11 @@
   background-image: url("../../src/resources/0.png");
   height: 100%;
   width: 100%;
+}
+
+.on-drag-over {
+  border: 3px black dashed;
+  transform: scale(1.1);
+  transform-origin: center;
+  transition: all 0.4s;
 }

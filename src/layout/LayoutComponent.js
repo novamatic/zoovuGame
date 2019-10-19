@@ -6,7 +6,7 @@ import LayField from "../layField/LayFieldComponent";
 import FinishModal from "../finishModal/FinishModalComponent";
 
 const Layout = () => {
-  const [startGame, setStartGame] = useState(false);
+  const [playGame, setPlayGame] = useState(false);
   const [finishGame, setFinishGame] = useState(false);
   const [score, setScore] = useState(0);
   const [hiddenPictureParts, setHiddenPictureParts] = useState([0, 1, 2, 3, 4]);
@@ -24,15 +24,15 @@ const Layout = () => {
   );
 
   useEffect(() => {
-    if (startGame) {
+    if (playGame) {
       const interval = setInterval(() => setScore(score => score + 1), 1000);
       return () => clearInterval(interval);
     }
-  }, [score, startGame]);
+  }, [score, playGame]);
 
   useEffect(() => {
     if (!hiddenPictureParts.length) {
-      setStartGame(false);
+      setPlayGame(false);
       setFinishGame(true);
     }
   }, [hiddenPictureParts]);
@@ -56,11 +56,12 @@ const Layout = () => {
           <h2>Pickup Cards</h2>
           <PickupCards
             partToFind={partToFind}
-            startGame={startGame}
-            setStartGame={setStartGame}
+            startGame={playGame}
+            setStartGame={setPlayGame}
             setPickedPart={setPickedPart}
             hiddenPictureParts={hiddenPictureParts}
             setDraggedPart={setDraggedPart}
+            pickedPart={pickedPart}
           />
         </div>
         <div className="zoovu-logo-container m-20">

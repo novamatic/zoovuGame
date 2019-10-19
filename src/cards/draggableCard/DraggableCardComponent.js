@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classnames from "classnames";
 
-const DraggableCard = ({ partId, classes, setDraggedPart, setPickedPart, startGame ,setStartGame, partToFind}) => {
+const DraggableCard = ({ partId, classes, setDraggedPart, setPickedPart, startGame ,setStartGame, partToFind, pickedPart}) => {
   const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    if (pickedPart !== partId) setToggle(false)
+  }, [pickedPart])
 
   const handleClick = () => {
     if(!startGame) setStartGame(!startGame)
-    toggle ? setPickedPart(null) : setPickedPart(partId)
+    setPickedPart(partId)
     setToggle(!toggle)
   };
 

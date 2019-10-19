@@ -3,6 +3,7 @@ import DraggableCard from "../cards/draggableCard/DraggableCardComponent";
 import _shuffle from "lodash/shuffle";
 
 const PickupCards = ({
+                       pickedPart,
   hiddenPictureParts,
   setDraggedPart,
   setPickedPart,
@@ -33,6 +34,7 @@ const PickupCards = ({
           partId={partId}
           classes="empty-slot draggable-card-image"
           setDraggedPart={setDraggedPart}
+          pickedPart={pickedPart}
         />
       ))}
     </div>

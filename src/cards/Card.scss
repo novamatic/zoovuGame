@@ -1,5 +1,7 @@
 .reversed {
   cursor: pointer;
+  transition: all .4s;
+  transform: rotateY(360deg);
   &-0 {
     background-image: url("../resources/0.png");
   }

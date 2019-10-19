@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
+import classnames from 'classnames'
 
 const StaticCard = ({
   partId,
   classes,
+  slotNumber,
   draggedPart,
   hiddenPictureParts,
   setHiddenPictureParts,
@@ -10,8 +12,11 @@ const StaticCard = ({
   foundPictureParts,
   setFoundPictureParts
 }) => {
-  const onDrop = e => {
+  const [enter, setEnter] = useState(false)
+
+  const onDrop = (e, slotNumber) => {
     e.preventDefault();
+    if (slotNumber !== draggedPart) return;
     const newFoundPictureParts = [...foundPictureParts];
     newFoundPictureParts[draggedPart] = draggedPart;
     setFoundPictureParts(newFoundPictureParts);
@@ -30,9 +35,11 @@ const StaticCard = ({
 
   return (
     <div
-      onDrop={event => onDrop(event)}
+      onDrop={event => onDrop(event, slotNumber)}
       onDragOver={event => onDragOver(event)}
-      className={`${classes} reversed-${partId}`}
+      onDragEnter={() => setEnter(true)}
+      onDragLeave={() => setEnter(false)}
+      className={classnames(`${classes} reversed-${partId}`, {'on-drag-over': enter})}
     ></div>
   );
 };
