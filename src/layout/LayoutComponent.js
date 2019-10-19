@@ -4,6 +4,7 @@ import FindCard from "../findCard/FindCardComponent";
 import PickupCards from "../pickupCards/PickupCardsComponent";
 import LayField from "../layField/LayFieldComponent";
 import FinishModal from "../finishModal/FinishModalComponent";
+import { pickRandomElementFromArray } from "./layout";
 
 const Layout = () => {
   const [playGame, setPlayGame] = useState(false);
@@ -19,9 +20,7 @@ const Layout = () => {
   ]);
   const [draggedPart, setDraggedPart] = useState(null);
   const [pickedPart, setPickedPart] = useState(null);
-  const [partToFind, setPartToFind] = useState(
-    hiddenPictureParts[Math.floor(Math.random() * hiddenPictureParts.length)]
-  );
+  const [partToFind, setPartToFind] = useState(pickRandomElementFromArray(hiddenPictureParts));
 
   useEffect(() => {
     if (playGame) {
@@ -43,14 +42,12 @@ const Layout = () => {
   }, [pickedPart]);
 
   useEffect(() => {
-    setPartToFind(
-      hiddenPictureParts[Math.floor(Math.random() * hiddenPictureParts.length)]
-    );
+    setPartToFind(pickRandomElementFromArray(hiddenPictureParts));
   }, [hiddenPictureParts]);
 
   return (
     <div className="f-horizontal main-container">
-      {finishGame ? <FinishModal score={score}/> : null}
+      {finishGame ? <FinishModal score={score} /> : null}
       <div className="f-vertical left-container m-20">
         <div className="pickup-cards-container m-20 vertical-separator">
           <h2>Pickup Cards</h2>
