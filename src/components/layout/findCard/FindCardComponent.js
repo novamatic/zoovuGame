@@ -1,6 +1,6 @@
 import React from "react";
 import "./FindCard.scss";
-import StaticCard from "../cards/staticCard/StaticCardComponent";
+import StaticCard from "../../cards/staticCard/StaticCardComponent";
 
 const FindCard = ({ partToFind }) => {
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import DraggableCard from "../cards/draggableCard/DraggableCardComponent";
+import DraggableCard from "../../cards/draggableCard/DraggableCardComponent";
 import _shuffle from "lodash/shuffle";
 
 const PickupCards = ({

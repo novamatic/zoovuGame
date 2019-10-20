@@ -1,0 +1,41 @@
+.reversed {
+  cursor: pointer;
+  transition: all .4s;
+  transform: rotateY(360deg);
+  &-0 {
+    background-image: url("../../assets/images/0.png");
+  }
+  &-1 {
+    background-image: url("../../assets/images/1.png");
+  }
+  &-2 {
+    background-image: url("../../assets/images/2.png");
+  }
+  &-3 {
+    background-image: url("../../assets/images/3.png");
+  }
+  &-4 {
+    background-image: url("../../assets/images/4.png");
+  }
+}
+
+.empty-slot {
+  background-color: white;
+  height: 287px;
+  width: 169px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  &-logo {
+    @extend .empty-slot;
+    margin: 0;
+  }
+}
+
+.on-drag-over {
+  border: 3px black dashed;
+  transform: scale(1.1);
+  transform-origin: center;
+  transition: all 0.4s;
+}

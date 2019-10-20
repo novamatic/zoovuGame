@@ -23,7 +23,7 @@ const DraggableCard = ({ partId, classes, setDraggedPart, setPickedPart, startGa
     <div
       className={classnames(classes, { [`reversed reversed-${partId}`]: toggle })}
       onClick={handleClick}
-      draggable={toggle && partToFind === partId ? 'true' : 'false'}
+      draggable={toggle && partToFind === partId ? true : false}
       onDrag={event => onDrag(event, partId)}
     ></div>
   );

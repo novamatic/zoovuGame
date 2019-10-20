@@ -1,5 +1,5 @@
 import React from "react";
-import StaticCard from "../cards/staticCard/StaticCardComponent";
+import StaticCard from "../../cards/staticCard/StaticCardComponent";
 
 const LayField = ({
   draggedPart,
@@ -7,12 +7,14 @@ const LayField = ({
   setHiddenPictureParts,
   setDraggedPart,
   foundPictureParts,
-  setFoundPictureParts
+  setFoundPictureParts,
+  partToFind
 }) => {
   return (
     <div className="f-horizontal f-justify-content">
       {foundPictureParts.map((partId, index) => (
         <StaticCard
+          partToFind={partToFind}
           key={partId}
           partId={partId}
           slotNumber={index}

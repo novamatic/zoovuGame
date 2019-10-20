@@ -1,9 +1,8 @@
-@import "layout/LayoutComponent";
-@import "../resources/styles/spacing";
-@import "../resources/styles/dragging";
-@import "pickupCards/PickupCards";
-@import "cards/Card";
-@import "finishModal/FinishModal";
+@import "components/layout/LayoutComponent";
+@import "assets/styles/spacing";
+@import "components/layout/pickupCards/PickupCards";
+@import "components/cards/Card";
+@import "components/finishModal/FinishModal";
 
 * {
   margin: 0;
@@ -12,5 +11,5 @@
 }
 
 body {
-  background-color: lightgrey;
+  background-color: #8fd2ce;
 }

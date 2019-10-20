@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Score from "../score/ScoreComponent";
-import FindCard from "../findCard/FindCardComponent";
-import PickupCards from "../pickupCards/PickupCardsComponent";
-import LayField from "../layField/LayFieldComponent";
+import Score from "./score/ScoreComponent";
+import FindCard from "./findCard/FindCardComponent";
+import PickupCards from "./pickupCards/PickupCardsComponent";
+import LayField from "./layField/LayFieldComponent";
 import FinishModal from "../finishModal/FinishModalComponent";
 import { pickRandomElementFromArray } from "./layout";
 
@@ -20,7 +20,9 @@ const Layout = () => {
   ]);
   const [draggedPart, setDraggedPart] = useState(null);
   const [pickedPart, setPickedPart] = useState(null);
-  const [partToFind, setPartToFind] = useState(pickRandomElementFromArray(hiddenPictureParts));
+  const [partToFind, setPartToFind] = useState(
+    pickRandomElementFromArray(hiddenPictureParts)
+  );
 
   useEffect(() => {
     if (playGame) {
@@ -62,8 +64,9 @@ const Layout = () => {
           />
         </div>
         <div className="zoovu-logo-container m-20">
-          <h2>Zoovu Logo</h2>
+          <h2 className="m-b-10">Zoovu Logo</h2>
           <LayField
+            partToFind={partToFind}
             draggedPart={draggedPart}
             hiddenPictureParts={hiddenPictureParts}
             setHiddenPictureParts={setHiddenPictureParts}
